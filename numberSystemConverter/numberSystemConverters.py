@@ -1,16 +1,22 @@
-def decimal_to_hex(dec):
+def decimal_to(dec,system):
+    sufix = {
+        2 : "B",
+        8 : "O",
+        10 : "D",
+        16 : "H"
+    }
     signs = []
     for i in range(0,10):
         signs.append(str(i))
     signs = signs + ["A","B","C","D","E","F"]
 
     rem = 0
-    hex_value = ""
+    value = ""
     while dec != 0:
-        rem = dec % 16
-        dec = dec // 16
-        hex_value = signs[rem] + hex_value
-    print(hex_value)
+        rem = dec % system
+        dec = dec // system
+        value = signs[rem] + value
+    print(f"{value}-{sufix[system]}")
 
 def hex_to_decimal(hexa):
     signs = []
@@ -33,9 +39,15 @@ def hex_to_decimal(hexa):
 
     print(dec_value) 
 
+def dec_to_octal():
+    pass
+
+def octal_to_dec():
+    pass
 
 
 
+decimal_to(234,10)
 
 # decimal_to_hex(23423742)
 hex_to_decimal("A2B6")
