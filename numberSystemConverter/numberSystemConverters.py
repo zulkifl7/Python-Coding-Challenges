@@ -34,6 +34,8 @@ def hex_to_decimal(hexa):
     print(dec_value) 
 
 print("Hello World")
+def hello():
+    pass
 
 
 
