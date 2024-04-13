@@ -27,33 +27,6 @@ def decimal_to(dec,system):
         value = signs[rem] + value
     print(f"{value}-{sufix[system]}")
 
-def hex_to_decimal(hexa):
-    signs = []
-    for i in range(0,10):
-        signs.append(i)
-    signs = signs + ["A","B","C","D","E","F"]
-    values = list(reversed((" ".join(str(hexa))).split(" "))) # here we are adding a space between all letters
-    # values = values.split(" ") # spliting in the space
-    # values = list(reversed(values))
-    
-    k = 0
-    dec_value = 0
-    while len(values) > k:
-        n = 0
-        while n < 16:
-            if str(values[k]) == str(signs[n]):
-                dec_value += (16**k)*n
-            n += 1
-        k += 1
-
-    print(f"{dec_value}-D") 
-
-def dec_to_octal():
-    pass
-
-def octal_to_dec():
-    pass
-
 def to_decimal(num,system):
     err = 0
     # Seperation induvidual digits in the number to conversion
@@ -72,7 +45,8 @@ def to_decimal(num,system):
                 err = 1
                 
         else:
-            print(11)
+            if (int(values[k]) >= system):
+                print(f"Invalid number! {values[k]} cannto be used in {system} based number system!")
         n = 0
         while n < 16:
             if str(values[k]) == str(signs[n]):
@@ -81,6 +55,14 @@ def to_decimal(num,system):
         k += 1
     if err == 0:
         print(f"{dec_value}-D") 
+
+def dec_to_octal():
+    pass
+
+def octal_to_dec():
+    pass
+
+
 
 to_decimal("143",8)
 decimal_to(234,10)
