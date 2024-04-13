@@ -56,16 +56,7 @@ def to_decimal(num,system):
     if err == 0:
         print(f"{dec_value}-D") 
 
-def dec_to_octal():
-    pass
-
-def octal_to_dec():
-    pass
-
-
 
 to_decimal("143",8)
 decimal_to(234,10)
 
-# decimal_to_hex(23423742)
-# hex_to_decimal("A2B6")
