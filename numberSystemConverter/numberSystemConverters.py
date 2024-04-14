@@ -56,8 +56,35 @@ def to_decimal(num,system):
     if err == 0:
         print(f"{dec_value}-D") 
 
+# Octal to binary conversion
 
-to_decimal("143",8)
-decimal_to(234,10)
-to_decimal()
+def octal_to_binary(num):
+    bin_value = "" # this is the place where the answer goes
+    err = 0 # To find if the number user entered is an octal number and record the output 
+    
+    # main loop to go through the digits
+    for i in str(num):
+        value_hold = ""
+        m = int(i)
+        # Checking if the number is an octal number 
+        if m > 7:
+            err = 1
+            print(f"{num} is not an octal number!")
+            break
+        # converting the digit to binary 
+        while m > 0:
+            value_hold = str(m % 2) + value_hold
+            m = m // 2
+        #  making sure the octal digit is converted to 3-bit binary equevelant
+        while len(value_hold ) < 3:
+            value_hold = "0" + value_hold
+        # updating the final answer
+        bin_value = bin_value + value_hold
+    if err == 0:
+        print(bin_value)
+
+
+# to_decimal("143",8)
+# decimal_to(234,10)
+octal_to_binary(21)
 

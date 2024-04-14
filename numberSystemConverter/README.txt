@@ -23,3 +23,6 @@ At this moment we have 2 Functions
                     2 - Binry
                     8 - Octal
                     16 - Hexa decimal
+
+
+2 - octal_to_binary()                    
