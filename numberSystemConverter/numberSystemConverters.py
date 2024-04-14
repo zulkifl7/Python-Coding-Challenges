@@ -59,6 +59,5 @@ def to_decimal(num,system):
 
 to_decimal("143",8)
 decimal_to(234,10)
-
 to_decimal()
 
