@@ -97,4 +97,5 @@ def octal_hex_to_binary(num,num_system):
 # to_decimal("143",8)
 # decimal_to(234,10)
 octal_hex_to_binary("A2",16)
+# octal_hex_to_binary()
 
