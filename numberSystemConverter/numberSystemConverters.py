@@ -56,7 +56,7 @@ def to_decimal(num,num_system):
     if err == 0:
         print(f"{dec_value}-D") 
 
-# Octal to binary conversion
+# Octal and hexadecimal to binary conversion
 
 def octal_hex_to_binary(num,num_system):
     bin_value = "" # this is the place where the answer goes
@@ -92,10 +92,45 @@ def octal_hex_to_binary(num,num_system):
     if err == 0:
         print(bin_value)
 
+# Binary to Octal and Hexadecimal Conversion
 
+def binary_to_octal_hex(num,num_system):
+    err = 0
+    k = 1
+    # setting up based on number system we have to convert
+    if num_system == 8:
+        k = 2
+    elif num_system == 16:
+        k = 3
+    else:
+        err = 1
+    answer = ""
+    count = 0
+    num_hold = 0
+
+    # Looping through digits from back to front
+    for i in reversed(str(num)):
+        # Finding the value of binary digit
+        num_hold += (int(i) * 2 ** count)
+        # breaking by 3 or 4 digits respactively for octal or hexadecimal
+        if count == k:
+            answer = signs[num_hold] + answer
+            count = 0
+            num_hold = 0
+        else:
+            count += 1
+    # making sure to add the last digit if num does not 
+    # have 3 or 4 bit in the end respectivel for octal and hexadecimal
+    if len(str(num)) % (k+1) != 0:
+        answer = signs[num_hold] + answer
+    if err == 1:
+        print("Invalid file type for function binary_to_octal_hex") 
+    else:
+        print(answer)
+    # print(answer)
 
 # to_decimal("143",8)
 # decimal_to(234,10)
-octal_hex_to_binary("A2",16)
+# octal_hex_to_binary("A2",16)
 # octal_hex_to_binary()
-
+binary_to_octal_hex(10111110010,16)
